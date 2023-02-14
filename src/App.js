@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
-import Book from "./assets/penchile-aka-pori/pencile-aka-pori.pdf";
 
 const App = () => {
   const [numPages, setNumPages] = useState(null);
@@ -26,7 +25,10 @@ const App = () => {
         </p>
       </nav>
 
-      <Document file={Book} onLoadSuccess={onDocumentLoadSuccess}>
+      <Document
+        file="./pencile-aka-pori.pdf"
+        onLoadSuccess={onDocumentLoadSuccess}
+      >
         <Page pageNumber={pageNumber} />
       </Document>
     </div>
